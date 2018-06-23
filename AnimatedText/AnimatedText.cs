@@ -20,7 +20,7 @@ namespace AnimatedText
         public AnimatedText()
         {
             Orientation = StackOrientation.Horizontal;
-            Spacing = 0;
+            Spacing = -1;
         }
 
         public bool IsRunning
@@ -79,9 +79,9 @@ namespace AnimatedText
                     new Animation(v => label.Scale = v, 1.75, 1, Easing.Linear));
                 
                 _animation.Add(index * oneCharAnimationLength, (index + 1) * oneCharAnimationLength,
-                    new Animation(v => label.TranslationY = v, 0, -20, Easing.Linear));
+                    new Animation(v => label.TranslationY = v, 0, -10, Easing.Linear));
                 _animation.Add((index + 1) * oneCharAnimationLength, (index + 2) * oneCharAnimationLength,
-                    new Animation(v => label.TranslationY = v, -20, 0, Easing.Linear));
+                    new Animation(v => label.TranslationY = v, -10, 0, Easing.Linear));
 
                 index++;
             }
